@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title></title>
+<!--   <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="ArticleController">
+  <h3>Article Extractor</h3>
+  <p>Uses file-saver to save the article from the font-end <a href="https://github.com/eligrey/FileSaver.js" target="_blank">FileSaver.js</a>.
+  <form class="form">
+    <label>Input url</label>
+    <input type="text" placeholder="Enter article's url" ng-model="article.url">
+    <button type="submit" ng-click="getArticle()">Get Article</button>
+  </form>
+  <button type="submit" ng-click="saveArticle()">Save to file</button>
+  <div>{{ article.text }}</div>
+  <script src="bower_components/file-saver/FileSaver.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
+
+
