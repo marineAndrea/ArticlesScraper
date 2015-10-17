@@ -11,8 +11,10 @@ angular.module('app', [])
       })
       .then(function successCallback(response) {
           $scope.article.sections = $scope.parseArticle(response.data);
+          $scope.article.url = "";
         }, function errorCallback(response) {
           alert("sorry we couldn't get this article, try another url");
+          $scope.article.url = "";
         });
     };
 
