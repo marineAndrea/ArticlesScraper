@@ -17,7 +17,6 @@ angular.module('app', [])
     };
 
     $scope.saveArticle = function() {
-      console.log('savearticle called');
       var text = "";
       for (var i = 0; i < $scope.article.sections.length; i++) {
         text += $scope.article.sections[i];
