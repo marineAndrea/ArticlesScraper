@@ -3,14 +3,17 @@ angular.module('app', [])
     $scope.article = {};
 
     $scope.getArticle = function() {
+      $scope.article.sections = [];
       console.log('url', $scope.article.url);
       $http({
         method: 'GET',
-        url: 'http://www.thedailybeast.com/articles/2014/08/21/swat-lobby-takes-a-shot-at-congress.html'
+        url: $scope.article.url
       })
-      .then(function (resp) {
-        $scope.article.sections = $scope.parseArticle(resp.data);
-      });
+      .then(function successCallback(response) {
+          $scope.article.sections = $scope.parseArticle(response.data);
+        }, function errorCallback(response) {
+          alert("sorry we couldn't get this article, try another url");
+        });
     };
 
     $scope.saveArticle = function() {
