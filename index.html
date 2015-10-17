@@ -13,7 +13,11 @@
     <button type="submit" ng-click="getArticle()">Get Article</button>
   </form>
   <button type="submit" ng-click="saveArticle()">Save to file</button>
-  <div>{{ article.text }}</div>
+  <div>
+    <ul>
+      <li ng-repeat="s in article.sections">{{ s }}</li>
+    </ul>
+  </div>
   <script src="bower_components/file-saver/FileSaver.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
